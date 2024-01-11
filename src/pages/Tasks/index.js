@@ -3,7 +3,7 @@ import react, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore/lite";
 import database from "../../config/firebaseConfig";
-import { FontAwesome } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function Task({ navigation }) {
   const [tasks, setTasks] = useState([]);
@@ -40,11 +40,7 @@ export default function Task({ navigation }) {
                   deleteTask(item.id);
                 }}
               >
-                <FontAwesome
-                  name="star"
-                  size={23}
-                  color="#CB2C31"
-                ></FontAwesome>
+                <AntDesign name="close" size={23} color="#CB2C31" />
               </TouchableOpacity>
               <Text
                 style={styles.descriptionTask}
